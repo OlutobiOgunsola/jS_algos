@@ -17,8 +17,6 @@ function sockMerchant(n, ar) {
         } else {
             sockPile[sock] = 1;
         }
-
-        console.log(sock, sockPile)
     }
     
     for(let i = 0; i < ar.length; i++){
@@ -30,7 +28,6 @@ function sockMerchant(n, ar) {
     for(let elem in sockPileKeys) {
         let pairsTotal=Math.floor(sockPile[sockPileKeys[elem]]/2);
         pairsTotal ? totalPairs=totalPairs+pairsTotal:null;
-        console.log(totalPairs, pairsTotal, elem, sockPile)
     }
     
     return totalPairs;
