@@ -10,24 +10,27 @@ function sockMerchant(n, ar) {
     let sockPile = {};
     let totalPairs = 0;
     
-    const assignSock=(sock) => {
+    let assignSock = (sock) => {
         if(sockPile[sock]) {
             // sock has siblings. group together
             sockPile[sock]++
         } else {
             sockPile[sock] = 1;
         }
+
+        return null;
     }
     
     for(let i = 0; i < ar.length; i++){
-        assignSock(ar[i]);   
+        return assignSock(ar[i]); 
     }
 
     var sockPileKeys = Object.keys(sockPile)
     
     for(let elem in sockPileKeys) {
-        let pairsTotal=Math.floor(sockPile[sockPileKeys[elem]]/2);
-        pairsTotal ? totalPairs=totalPairs+pairsTotal:null;
+        let pairsTotal = Math.floor(sockPile[sockPileKeys[elem]]/2);
+        pairsTotal ? totalPairs += pairsTotal : null;
+        return null;
     }
     
     return totalPairs;

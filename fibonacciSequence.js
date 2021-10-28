@@ -4,11 +4,11 @@
  * @returns {Structure array} - Returns an array of fibonacci numbers up to specified depth
  */
 
-var makeFibonacciSequence=function(depth) {
+var makeFibonacciSequence = function(depth) {
 
-    let fibonacciArray=[0,1];
+    let fibonacciArray = [0,1];
     
-    if(depth<1) {
+    if(depth < 1) {
 
         return [];
 
