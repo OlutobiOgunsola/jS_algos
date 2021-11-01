@@ -1,0 +1,49 @@
+        switch(cellCol) {
+            case 0:
+                for(row of matrix) {
+                    // check if column is valid
+                    if(row[0]===1) {
+                        cellValid=false;
+                    }
+
+                    // check if diagonal is valid
+                    if(row[depth]===1&&depth<matrix.length) {
+                        cellValid=false;
+                    }
+
+                    depth++;
+                }
+                break;
+            case i:
+                for(row in matrix) {
+                    let cRow = matrix[row]; // concrete row to destructure actual array using index(row);
+                    if(row != cellRow) {
+                        
+                        console.log('row,cellRow', row, cRow, cRow[depth]);
+                        if(cRow[depth]===1) {
+                                cellValid=false;
+                            }
+
+                            // check diagonal to the right
+
+                            if(cRow[depth+i]<cRow.length&&cRow[depth+i]===1) {
+                                console.log('setting false on i')
+                                cellValid=false;
+                            }
+
+                            // check diagonal to the left
+                            console.log(cellCol,depth,cellCol-depth, i);
+                            if(cellCol-depth>=0&&cRow[cellCol-depth]===1) {
+                                console.log('setting false on -i', i, cellCol, depth,cellCol-depth,cRow[cellCol-depth]);
+                                cellValid=false;
+                            }
+
+                            depth++;
+                    } else {
+                        if(cRow[i] === 1) { // check if matrix row has any queen
+                            cellValid=false;
+                        }
+                    }
+                }
+                break;
+        }
