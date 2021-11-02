@@ -123,15 +123,8 @@ var nQueens = function (numQueens, mDimensions) {
         }
         currRow++;
     }
+    console.log(safeCells.length)
     return safeCells;
 }
 
-
-    let myM = [
-[0,0,0,0,0],
-[0,0,0,0,0],
-[1,0,0,0,0],
-[0,0,0,0,0]
-        ];
-
-console.log(nQueens(3,[243,333]))
+console.log(nQueens(3,[150,120]))
