@@ -3,16 +3,16 @@ class HashTable {
         this.data = [];
     }
 
-    insertData = function(data) {
-        if(!data || typeof(data) !== 'string') {
-            throw new Error(`Cannot insert null or typeof ${typeof data} into table`)
+    insertData = function(nextData) {
+        if(!nextData||typeof (nextData) !== 'string') {
+            throw new Error(`Cannot insert null or typeof ${typeof nextData} into table`)
         }
 
-        let hash = data % 26;
+        let hash = nextData % 26;
         console.log(hash)
     }
 }
 
 var table = new HashTable();
 
-table.insertData('')
+table.insertData('WONDER');

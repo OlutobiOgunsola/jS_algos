@@ -15,15 +15,15 @@ var validateCell = function(cell) {
 
 var validateMultipleCells = function(...cells) {
     let cellArr = [...cells];
-    let localCellsAreValid = true;
+    let cellsAreValid = true;
     cellArr.forEach(cell => {
         if(validateCell(cell)) {
-            localCellsAreValid = false;
+            cellsAreValid = false;
         }
 
         return;
     })
-    return localCellsAreValid;
+    return cellsAreValid;
 }
 
 var checkCellValidOnBoard = function(matrix, cell) {
